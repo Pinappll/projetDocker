@@ -1,0 +1,11 @@
+# Utilisez une image officielle Nginx
+FROM nginx:latest
+
+# Copiez la configuration Nginx
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+
+# Définissez le répertoire de travail
+WORKDIR /var/www/html
+
+# Copiez les fichiers du projet dans le conteneur
+COPY . .
