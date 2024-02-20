@@ -15,6 +15,6 @@ RUN apk add --update nodejs npm
 COPY . /var/www/html
 
 # Assurez-vous que le script est exécutable (à faire si le script n'est pas déjà exécutable)
-RUN chmod +x /var/www/html/install.sh
+RUN chmod +x /var/www/html/script.sh
 
 # Note: L'exécution du script install.sh est gérée par docker-compose, donc pas besoin d'ajouter d'autres commandes ici
