@@ -12,7 +12,7 @@ services:
       - "--entrypoints.web.address=:80"
     ports:
       - "80:80"
-      - "8084:8080" # Port for Traefik Dashboard
+      - "8084:8080" # Port pour afficher le dashboard
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
     networks:
@@ -113,6 +113,8 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     restart: always
+    ports:
+      - 8083:80
     environment:
       PMA_HOST: db
       PMA_USER: laravel
