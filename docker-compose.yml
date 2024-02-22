@@ -1,23 +1,7 @@
 version: '3'
 
 services:
-  # Traefik
-  traefik:
-    image: traefik:v2.5
-    container_name: traefik
-    command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80"
-    ports:
-      - "80:80"
-      - "8084:8080" # Port pour afficher le dashboard
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-    networks:
-      - app_network
-
+  
   # MySQL
   db:
     image: mysql:5.7
@@ -44,7 +28,7 @@ services:
     environment:
       - RUN_MIGRATIONS=true
       - DB_HOST=db
-      - SERVER_NOM=Serveur 1
+      - SERVER_NOM=SERVER_NGINX1
     depends_on:
       - db
     networks:
@@ -66,7 +50,7 @@ services:
       - ./script.sh:/usr/local/bin/install.sh
     environment:
       - DB_HOST=db
-      - SERVER_NOM=Serveur 2
+      - SERVER_NOM=SERVER_NGINX2
     depends_on:
       - db
     networks:
@@ -126,6 +110,23 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.phpmyadmin.rule=Host(`phpmyadmin.localhost`)"
       - "traefik.http.services.phpmyadmin.loadbalancer.server.port=80"
+
+    # Traefik
+  traefik:
+    image: traefik:v2.5
+    container_name: traefik
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80" # Port pour accéder aux applications
+      - "8084:8080" # Port pour afficher le dashboard
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - app_network
 
 networks:
   app_network: {}
