@@ -1,3 +1,13 @@
+## Installation
+- Clonez ce dépôt sur votre machine locale.
+- Lancez docker-compose up
+- Patientez que les serveurs se lancent
+- Allez sur nginx1.localhost pour taper sur le serveur nginx 1
+- Allez sur nginx2.localhost pour taper sur le serveur nginx 2
+- Allez sur phpmyadmin.localhost pour aller sur phpmyadmin
+- Allez sur localhost:8084 pour visualiser le dashboard traefik
+
+##
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
