@@ -21,3 +21,5 @@ npm run build
 
 # Lancer php-fpm
 exec php-fpm
+
+ 
