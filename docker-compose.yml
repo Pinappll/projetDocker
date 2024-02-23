@@ -121,3 +121,4 @@ networks:
 
 volumes:
   mysql_data: {}
+
