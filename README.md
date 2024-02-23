@@ -1,5 +1,7 @@
 ## Installation
 - Clonez ce dépôt sur votre machine locale.
+- Vérifier que dans le .env app_key est bien vide
+- Avant de lancer docker-compose vérifier que l'ide d'ouverture du script.sh est en LF et non en CRLF
 - Lancez docker-compose up
 - Patientez que les serveurs se lancent
 - Allez sur nginx1.localhost pour taper sur le serveur nginx 1
