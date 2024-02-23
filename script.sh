@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -e 
 
 # Mettre à jour Composer à la version souhaitée
 composer self-update --2
