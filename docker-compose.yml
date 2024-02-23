@@ -27,7 +27,7 @@ services:
       - ./script.sh:/usr/local/bin/install.sh
     environment:
       - DB_HOST=db
-      - SERVER_NOM=SERVER_NGINX1
+      - SERVER_NOM=Serveur 1
     depends_on:
       - db
     networks:
@@ -45,7 +45,7 @@ services:
       - ./script.sh:/usr/local/bin/install.sh
     environment:
       - DB_HOST=db
-      - SERVER_NOM=SERVER_NGINX2
+      - SERVER_NOM=Serveur 2
     depends_on:
       - db
     networks:
